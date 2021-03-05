@@ -1,5 +1,6 @@
 const { DiscordAPIError } = require("discord.js");
 const { generateMessage,pickRandom } = require("./generator");
+const { solveEquation } = require("./equation")
 
 const emojis = [
   ":cat:",
@@ -13,14 +14,14 @@ const emojis = [
 ]
 
 function handleMessage(message) {
-  try {
   if (message.content.match(/^.*[Mm]{1}anu[\?]*$/) || message.content.match(/^[Mm]{1}anu/)) {
     const text = generateMessage() + " " + message.author.username +
       " " + pickRandom(emojis);
     message.channel.send(text);
-  }
-  } catch (error) {
-    console.log(error);
+  } else if (message.content.match(/^mwork\s([0-9\.]+\s)+/)) {
+    const eIn = message.content.substr(5);
+    message.channel.send(`Your answear ${message.author.username}\n` +
+      solveEquation(eIn));
   }
 }
 
