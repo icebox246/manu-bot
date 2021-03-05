@@ -13,10 +13,14 @@ const emojis = [
 ]
 
 function handleMessage(message) {
+  try {
   if (message.content.match(/^.*[Mm]{1}anu[\?]*$/) || message.content.match(/^[Mm]{1}anu/)) {
     const text = generateMessage() + " " + message.author.username +
       " " + pickRandom(emojis);
     message.channel.send(text);
+  }
+  } catch (error) {
+    console.log(error);
   }
 }
 
