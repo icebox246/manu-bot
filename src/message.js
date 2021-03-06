@@ -1,6 +1,7 @@
 const { DiscordAPIError } = require("discord.js");
 const { generateMessage,pickRandom } = require("./generator");
 const { solveEquation } = require("./equation")
+const { solveGauss } = require("./elim_gauss")
 
 const emojis = [
   ":cat:",
@@ -22,6 +23,12 @@ function handleMessage(message) {
     const eIn = message.content.substr(5);
     message.channel.send(`Your answear ${message.author.username}\n` +
       solveEquation(eIn));
+  } else if (message.content.match(/^megau\s+/)) {
+    console.log("requested gauss solving")
+    const eIn = message.content.substr(5);
+    solveGauss(eIn,ans => {
+    message.channel.send(`Your answear ${message.author.username}\n${ans}`);
+  })
   }
 }
 
