@@ -1,1 +1,2 @@
-gcc ./bin/elim_gauss/ega.cpp -o ./bin/elim_gauss/ega
+cd bin/elim_gauss
+make ega
