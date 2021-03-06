@@ -1,1 +1,1 @@
-g++ bin/ega.cpp -o bin/ega.exe
+gcc bin/ega.cpp -o bin/ega.exe
