@@ -11,6 +11,7 @@ const emojis = [
   ":pouting_cat:",
   ":pouting_cat:",
   ":pouting_cat:",
+  ":smirk_cat:",
   ":smirk_cat:"
 ]
 
