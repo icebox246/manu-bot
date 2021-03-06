@@ -1,1 +1,1 @@
-gcc ./bin/elim_gauss/ega.cpp -o ./bin/elim_gauss/ega.exe
+gcc ./bin/elim_gauss/ega.cpp -o ./bin/elim_gauss/ega

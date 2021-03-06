@@ -4,7 +4,7 @@ const {
 const path = require("path")
 
 function solveGauss(input, callback) {
-  const child = execFile(path.join(process.cwd(),"bin/elim_gauss/ega.exe"));
+  const child = execFile(path.join(process.cwd(),"bin/elim_gauss/ega"));
 
   input = input.split("\n").join(" ");
   child.stdin.write(input.toString());
